@@ -1,8 +1,9 @@
-# youtube-client-app
-
 # Youtube-client-app
 
 **Youtube-client-app** is an application that serves as a prototype for the popular video-sharing platform Youtube. Using the API data, users can search, filter, sort, and receive information about all available videos on YouTube.
+
+## Deployment
+- [Youtube-client-app](https://angelinabz.github.io/youtube-client-app/youtube-client-app)
 
 ## Tech Stack
 - **Frontend**: HTML, SCSS, TypeScript, Angular
