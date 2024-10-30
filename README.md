@@ -8,7 +8,7 @@
 ## Tech Stack
 - **Frontend**: HTML, SCSS, TypeScript, Angular
 - **Backend**: Youtube API
-- **Formating**: ESLint, Prettier, Husky
+- **Formating**: ESLint, Prettier
 - **Testing**: Jest
 
 ## Available scripts
