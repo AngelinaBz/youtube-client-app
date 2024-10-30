@@ -1,0 +1,52 @@
+<form [formGroup]="adminForm" class="admin-form">
+  <label for="title">Title</label>
+  <input type="text" id="title" formControlName="title" />
+  <div *ngIf="title?.errors?.['required'] && (title?.touched || title?.dirty)" class="error">Please enter a title</div>
+  <div *ngIf="title?.errors?.['minlength'] && (title?.touched || title?.dirty)" class="error">The title is too short</div>
+  <div *ngIf="title?.errors?.['maxlength'] && (title?.touched || title?.dirty)" class="error">The title is too long</div>
+  <label for="description">Description</label>
+  <input type="text" id="description" formControlName="description" />
+  <div *ngIf="description?.errors?.['maxlength'] && (description?.touched || description?.dirty)" class="error">
+    The description is too long
+  </div>
+  <label for="imageLink">Img</label>
+  <input type="text" id="imageLink" formControlName="imageLink" />
+  <div *ngIf="imageLink?.errors?.['required'] && (imageLink?.touched || imageLink?.dirty)" class="error">
+    Please enter a link to the image
+  </div>
+  <label for="videoLink">Link video</label>
+  <input type="text" id="videoLink" formControlName="videoLink" />
+  <div *ngIf="videoLink?.errors?.['required'] && (videoLink?.touched || videoLink?.dirty)" class="error">
+    Please enter a link to the video
+  </div>
+  <label for="creationDate">Creation Date</label>
+  <input type="date" id="creationDate" formControlName="creationDate" />
+  <div *ngIf="creationDate?.errors?.['required'] && (creationDate?.touched || creationDate?.dirty)" class="error">
+    Please enter a creation date
+  </div>
+  <div *ngIf="creationDate?.errors?.['invalidDate'] && (creationDate?.touched || creationDate?.dirty)" class="error">
+    The date is invalid
+  </div>
+  <div formArrayName="tags" class="tags-container">
+    <label>Tags</label>
+    <div *ngFor="let tag of tags.controls; let i = index">
+      <div [formGroupName]="i">
+        <div class="tag-block">
+          <input type="text" formControlName="tagName" placeholder="Enter tag" />
+          <app-button [btnClass]="'remove-tag'" (clickHandler)="removeTag(i)" class="remove-tag">-</app-button>
+        </div>
+        <div
+          *ngIf="tag.get('tagName')?.errors?.['required'] && (tag.get('tagName')?.touched || tag.get('tagName')?.dirty)"
+          class="error"
+        >
+          Tag is required
+        </div>
+      </div>
+    </div>
+    <app-button [isDisabled]="tags.length >= 5" [btnClass]="'add-tag'" (clickHandler)="addTag()" class="add-tag">+</app-button>
+  </div>
+  <div class="buttons-container">
+    <app-button [isDisabled]="!isValid" [btnClass]="'admin'" (clickHandler)="onSubmit()">Create card</app-button>
+    <app-button [btnClass]="'reset'" (clickHandler)="onReset()">Reset</app-button>
+  </div>
+</form>

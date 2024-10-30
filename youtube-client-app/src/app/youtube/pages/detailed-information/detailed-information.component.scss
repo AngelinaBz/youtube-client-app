@@ -1,0 +1,150 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  box-sizing: border-box;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  margin-right: -1px;
+  background-color: white;
+  border-radius: 30% 0 0 30%;
+  border: 1px solid rgb(212, 208, 208);
+  cursor: pointer;
+}
+
+.video-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: auto;
+  width: 90%;
+
+  @media screen and (max-width: 750px) {
+    flex-direction: column;
+  }
+}
+
+.video {
+  max-width: 640px;
+  max-height: 780px;
+  width: 60%;
+  height: auto;
+
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
+}
+
+.item-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 40%;
+  background-color: #d7d7d7;
+  border-radius: 0 5px;
+  height: auto;
+
+  @media screen and (max-width: 750px) {
+    width: 100%;
+  }
+
+  .item-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+
+    .title-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .title-text {
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+  }
+
+  .item-description {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+
+    .description-name {
+      font-weight: 700;
+    }
+
+    .description-text {
+      word-wrap: break-word;
+    }
+  }
+
+  .item-statistics {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+    gap: 20px;
+    padding: 10px;
+
+    .statistics {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    app-button {
+      width: 70px;
+    }
+
+    img {
+      width: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .status {
+    width: 100%;
+    height: 5px;
+    margin-top: auto;
+  }
+}

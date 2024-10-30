@@ -1,0 +1,21 @@
+<div class="sorting-container">
+  <div class="sortring">
+    <p>Sorting by:</p>
+    <a (click)="toggleSortByDateDirection()"
+      >date
+      <span *ngIf="activeSortParameter === 'date' && (sortingService.sortByDateDirection$ | async) === 'asc'">&uarr;</span>
+      <span *ngIf="activeSortParameter === 'date' && (sortingService.sortByDateDirection$ | async) === 'desc'">&darr;</span>
+    </a>
+    <a (click)="toggleSortByViewCountDirection()"
+      >count of views
+      <span *ngIf="activeSortParameter === 'viewCount' && (sortingService.sortByViewCountDirection$ | async) === 'asc'"
+        >&uarr;</span
+      >
+      <span *ngIf="activeSortParameter === 'viewCount' && (sortingService.sortByViewCountDirection$ | async) === 'desc'"
+        >&darr;</span
+      >
+    </a>
+    <a class="filter">by words or sentance</a>
+    <input type="search" id="from-input" maxlength="256" (input)="onFilterTermChange($event)" />
+  </div>
+</div>
