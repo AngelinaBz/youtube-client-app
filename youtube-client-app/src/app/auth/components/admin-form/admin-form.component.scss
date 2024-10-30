@@ -1,0 +1,45 @@
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  .buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    app-button {
+      width: 100px;
+    }
+  }
+}
+
+.error {
+  margin: 0;
+  color: red;
+  font-size: 0.7rem;
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tag-block {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  .remove-tag {
+    width: 30px;
+  }
+}
+
+.add-tag {
+  width: 30px;
+}

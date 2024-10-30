@@ -1,0 +1,10 @@
+<div class="login" *ngIf="isLoggedIn$ | async">
+  <p>{{ username$ | async }}</p>
+  <img src="favorite.svg" alt="favorite" routerLink="/favorite" />
+  <img src="profile.svg" alt="icon" routerLink="/admin" />
+  <img src="logout.svg" alt="icon" (click)="logout()" />
+</div>
+<div class="login" *ngIf="(isLoggedIn$ | async) === false">
+  <p>Login</p>
+  <img src="login.svg" alt="icon" routerLink="/login" />
+</div>

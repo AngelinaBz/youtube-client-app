@@ -1,0 +1,20 @@
+<header>
+  <div class="header_icon" routerLink="/main">
+    <img src="youtube.svg" alt="icon" />
+    <p>Youtube</p>
+  </div>
+  <div class="search-container">
+    <input
+      type="search"
+      id="from-input"
+      [(ngModel)]="searchText"
+      (keyup.enter)="onInputChange()"
+      (input)="onInputChange()"
+      maxlength="256"
+      placeholder="Search..."
+    />
+    <img src="filter.svg" alt="filter" (click)="showSortingBlock()" />
+  </div>
+  <app-user></app-user>
+</header>
+<app-sorting *ngIf="showSorting"></app-sorting>

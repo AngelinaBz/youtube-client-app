@@ -1,0 +1,44 @@
+<div *ngIf="item" class="item-container">
+  <div class="back-btn" routerLink="/main">
+    <img src="arrow.svg" width="24" height="24" alt="back" />
+  </div>
+  <div class="video-container">
+    <img class="video" [src]="item.snippet?.thumbnails?.standard?.url" alt="Thumbnail" />
+    <div class="item-information">
+      <div class="item-title">
+        <p class="title-name">{{ item.snippet?.title }}</p>
+        <p class="title-text">{{ item.snippet?.publishedAt | date: 'EEEE, MMMM d, yyyy' }}</p>
+      </div>
+      <div class="item-description">
+        <p class="description-name">Description:</p>
+        <p class="description-text">{{ item.snippet?.description }}</p>
+      </div>
+      <div class="item-statistics">
+        <div class="statistics">
+          <img src="view.svg" alt="view" />
+          <p>{{ item.statistics?.viewCount }}</p>
+        </div>
+        <div class="statistics">
+          <img src="like.svg" alt="like" />
+          <p>{{ item.statistics?.likeCount }}</p>
+        </div>
+        <div class="statistics">
+          <img src="dislike.svg" alt="dislike" />
+          <p>{{ item.statistics?.dislikeCount }}</p>
+        </div>
+        <div class="statistics">
+          <img src="comment.svg" alt="comment" />
+          <p>{{ item.statistics?.commentCount }}</p>
+        </div>
+      </div>
+      <div class="buttons-container">
+        <div *ngIf="!item?.isCustom" class="favorite-container">
+          <img *ngIf="!isFavoriteComputed()" src="favorite.svg" alt="favorite" (click)="addVideoInFavorites()" />
+          <img *ngIf="isFavoriteComputed()" src="notfavorite.svg" alt="favorite" (click)="deleteVideoFromFavorites()" />
+        </div>
+        <img *ngIf="item?.isCustom" src="delete.svg" alt="delete" (click)="deleteCustomVideo()" />
+      </div>
+      <div class="status" [appStatus]="item.snippet?.publishedAt"></div>
+    </div>
+  </div>
+</div>

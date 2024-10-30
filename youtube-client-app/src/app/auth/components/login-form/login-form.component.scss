@@ -1,0 +1,18 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  app-button {
+    width: 100px;
+  }
+}
+.error {
+  margin: 0;
+  color: red;
+  font-size: 0.7rem;
+}

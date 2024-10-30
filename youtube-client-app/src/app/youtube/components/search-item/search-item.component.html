@@ -1,0 +1,31 @@
+<div class="item">
+  <img class="video" [src]="item.snippet?.thumbnails?.medium?.url" alt="Thumbnail" />
+  <div class="item-statistics">
+    <div class="statistics">
+      <img src="view.svg" alt="view" />
+      <p>{{ item.statistics?.viewCount }}</p>
+    </div>
+    <div class="statistics">
+      <img src="like.svg" alt="like" />
+      <p>{{ item.statistics?.likeCount }}</p>
+    </div>
+    <div class="statistics">
+      <img src="dislike.svg" alt="dislike" />
+      <p>{{ item.statistics?.dislikeCount }}</p>
+    </div>
+    <div class="statistics">
+      <img src="comment.svg" alt="comment" />
+      <p>{{ item.statistics?.commentCount }}</p>
+    </div>
+  </div>
+  <p class="item-title">{{ item.snippet?.title }}</p>
+  <div class="buttons-container">
+    <app-button [btnClass]="'more'" (click)="onItemClick()">More</app-button>
+    <div *ngIf="!item?.isCustom" class="favorite-container">
+      <img *ngIf="!isFavorite" src="favorite.svg" alt="favorite" (click)="addVideoInFavorites()" />
+      <img *ngIf="isFavorite" src="notfavorite.svg" alt="favorite" (click)="deleteVideoFromFavorites()" />
+    </div>
+    <img *ngIf="item?.isCustom" src="delete.svg" alt="delete" (click)="deleteCustomVideo()" />
+  </div>
+  <div class="status" [appStatus]="item.snippet?.publishedAt"></div>
+</div>

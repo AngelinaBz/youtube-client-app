@@ -1,0 +1,16 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 3%;
+  gap: 10px;
+  background-color: #d7d7d7;
+  border-radius: 5px;
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

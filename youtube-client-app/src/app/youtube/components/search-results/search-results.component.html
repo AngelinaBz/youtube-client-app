@@ -1,0 +1,13 @@
+<div class="results-container">
+  <app-search-item *ngFor="let item of filteredItems" [item]="item"></app-search-item>
+</div>
+<div class="pagination-buttons" *ngIf="nextPageToken">
+  <button (click)="loadPrevPage()" [disabled]="!prevPageToken">Prev</button>
+  <button (click)="loadNextPage()" [disabled]="!nextPageToken">Next</button>
+</div>
+<div *ngIf="isLoading()" class="loading">
+  <p>Loading...</p>
+</div>
+<div *ngIf="isError() as error" class="loading">
+  <p>{{ error }}</p>
+</div>

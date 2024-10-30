@@ -1,0 +1,16 @@
+button {
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgb(212, 208, 208);
+
+  &:disabled {
+    background-color: rgb(212, 208, 208);
+    cursor: default;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(150, 146, 146);
+  }
+}
